@@ -92,6 +92,12 @@ function getCroppedImage(image, callbackMethod) {
   );
 }
 
+chrome.commands.onCommand.addListener(function(command) {
+  if (command === "reverseSearch") {
+    reverseSearch();
+  }
+});
+
 function dataURItoBlob(dataURI) {
   // convert base64/URLEncoded data component to raw binary data held in a string
   var byteString;
