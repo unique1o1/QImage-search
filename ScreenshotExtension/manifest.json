@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Yunik",
+  "version": "0.2",
+  "description": "google image search from screenshot",
+  "author": "Yunik Maharjan <yunik.maharjan@gmail.com>",
+  "homepage_url": "https://github.com/unique1o1/quicksave",
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "144": "icon.png"
+  }
+}
