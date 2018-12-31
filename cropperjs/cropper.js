@@ -115,10 +115,10 @@ var DEFAULTS = {
   background: true,
 
   // Enable to crop the image automatically when initialize
-  autoCrop: true,
+  autoCrop: false,
 
   // Define the percentage of automatic cropping area when initializes
-  autoCropArea: 0.8,
+  autoCropArea: 0.01,
 
   // Enable to move the image
   movable: true,
