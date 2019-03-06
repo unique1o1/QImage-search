@@ -6,7 +6,7 @@ Reverse image search without having to use any image editing software for croppi
 
 - Clone the repo.
   ```
-  git clone https://github.com/unique1o1/Quick-Image-search
+  git clone https://github.com/unique1o1/QImage-search/
   ```
 
 - Load the extension into Google Chrome as an Unpacked Extension:
@@ -25,7 +25,7 @@ Reverse image search without having to use any image editing software for croppi
 # TODO
 - UI for the extension
 ## Contribute
-Feel free to [Open an issue](https://github.com/unique1o1/Quick-Image-search/issues).
+Feel free to [Open an issue]( https://github.com/unique1o1/QImage-search/issues).
 
 ### License
  MIT © 2018 unique1o1
