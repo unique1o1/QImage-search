@@ -79,5 +79,5 @@ if (!document.querySelector("#cropping-tool")) {
   }
 
   //adding event listener for key press event on cropping interface
-  setTimeout(document.addEventListener("keydown", handleKeyPress), 1000);
+  document.addEventListener("keydown", handleKeyPress);
 }
