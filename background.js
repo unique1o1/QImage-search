@@ -26,24 +26,19 @@ function reverseSearch() {
   chrome.tabs.captureVisibleTab(function(screenshotUrl) {
     /*uploading the screenshot to a sever & generating url*/
 
-    //asking for image crop from user
-    if (confirm("Do you want to crop the image?")) {
-      // get cropped image & proceed
-      getCroppedImage(screenshotUrl, "reversesearch");
-      chrome.runtime.onMessage.addListener(function(
-        message,
-        sender,
-        sendResponse
-      ) {
-        if (message.callbackMethod === "reversesearch") {
-          reverseImageSearch(message.croppedImage);
-        }
-        //removing message listener
-        chrome.runtime.onMessage.removeListener(arguments.callee);
-      });
-    } else {
-      reverseImageSearch(screenshotUrl);
-    }
+    // get cropped image & proceed
+    getCroppedImage(screenshotUrl, "reversesearch");
+    chrome.runtime.onMessage.addListener(function(
+      message,
+      sender,
+      sendResponse
+    ) {
+      if (message.callbackMethod === "reversesearch") {
+        reverseImageSearch(message.croppedImage);
+      }
+      //removing message listener
+      chrome.runtime.onMessage.removeListener(arguments.callee);
+    });
   });
 }
 function getCroppedImage(image, callbackMethod) {

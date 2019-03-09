@@ -47,22 +47,10 @@ if (!document.querySelector("#cropping-tool")) {
   var image = document.getElementById("image");
   var cropper = new Cropper(image, {
     autoCrop: true,
-    zoomable: false,
-    movable: false,
-    rotatable: false,
-    cropend: function(e) {
-      //crop end event listener
-      /*console.log(e.detail.x);
-	    console.log(e.detail.y);
-	    console.log(e.detail.width);
-	    console.log(e.detail.height);
-	    console.log(e.detail.rotate);
-	    console.log(e.detail.scaleX);
-	    console.log(e.detail.scaleY);
-	  	
-	  	/*passing 'e' back to background page for further processing*/
-      //e
-    }
+    zoomable: true,
+    movable: true,
+    rotatable: true,
+    cropend: function(e) {}
   });
 
   //function to handle key press event on cropping interface
@@ -92,19 +80,4 @@ if (!document.querySelector("#cropping-tool")) {
 
   //adding event listener for key press event on cropping interface
   document.addEventListener("keyup", handleKeyPress);
-
-  //this button listener can be used if required later on
-  /*button.addEventListener('click', function doneCropping(e){
-		console.log("------------------- Image Cropped!! ---------------------");
-		var i = cropper.getCroppedCanvas().toDataURL('image/jpeg');
-		document.getElementById("cropping-tool").remove();
-		var ig = document.createElement('img');
-		ig.src=i;
-		document.querySelector("html").appendChild(ig);
-		console.log(i);
-	}, true);*/
-
-  alert(
-    "Use cursor for selecting region from image, then press any key to Crop!"
-  );
 }
