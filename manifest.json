@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "CropperImageSearch",
+  "name": "QImage Search",
   "version": "0.2",
-  "description": "google image search from screenshot",
+  "description": "google image search from a certain portion of image ",
   "author": "Yunik Maharjan <yunik.maharjan@gmail.com>",
-  "homepage_url": "https://github.com/unique1o1/quicksave",
+  "homepage_url": "https://github.com/unique1o1/QImage-search",
   "manifest_version": 2,
   "background": {
     "scripts": ["background.js"]
