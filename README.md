@@ -16,7 +16,10 @@ Reverse image search without having to use any image editing software for croppi
 
   Drag and Drop the downloaded folder.
   ```
+### Screenshot
 
+![screenshot](https://i.imgur.com/VolcXCu.png)
+![screenshot](https://i.imgur.com/gGxxsom.png)
 
 # Uses
 
