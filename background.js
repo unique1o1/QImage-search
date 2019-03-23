@@ -96,6 +96,7 @@ chrome.commands.onCommand.addListener(function(command) {
 function dataURItoBlob(dataURI) {
   // convert base64/URLEncoded data component to raw binary data held in a string
   var byteString;
+  console.log(dataURI);
   if (dataURI.split(",")[0].indexOf("base64") >= 0)
     byteString = atob(dataURI.split(",")[1]);
   else byteString = unescape(dataURI.split(",")[1]);

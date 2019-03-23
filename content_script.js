@@ -56,26 +56,44 @@ if (!document.querySelector("#cropping-tool")) {
   //function to handle key press event on cropping interface
   function handleKeyPress(e) {
     // use e.keyCode
-    console.log("------------------- Image Cropped!! ---------------------");
-    var i = cropper.getCroppedCanvas().toDataURL("image/jpeg");
+    if (e.which != 27) {
+      console.log("------------------- Image Cropped!! ---------------------");
+      var i = cropper.getCroppedCanvas().toDataURL("image/jpeg");
 
-    /*make the webpage visible again*/
-    document.querySelector("body").removeAttribute("style");
+      /*make the webpage visible again*/
+      document.querySelector("body").removeAttribute("style");
 
-    //removing key listener
-    document.removeEventListener("keyup", handleKeyPress);
+      //removing key listener
+      document.removeEventListener("keydown", handleKeyPress);
 
-    /*remove div#cropping-tool element*/
-    document.querySelector("#cropping-tool").remove();
+      /*remove div#cropping-tool element*/
+      document.querySelector("#cropping-tool").remove();
 
-    //send message to background script with cropped image
-    chrome.runtime.sendMessage(
-      { callbackMethod: callbackMethod, croppedImage: i },
-      function(response) {
-        //do nothing
-      }
-    );
-    console.log("cropped image sent to background script");
+      //send message to background script with cropped image
+      chrome.runtime.sendMessage(
+        { callbackMethod: callbackMethod, croppedImage: i },
+        function(response) {
+          //do nothing
+        }
+      );
+      console.log("cropped image sent to background script");
+    } else {
+      /*make the webpage visible again*/
+      document.querySelector("body").removeAttribute("style");
+
+      //removing key listener
+      document.removeEventListener("keydown", handleKeyPress);
+
+      /*remove div#cropping-tool element*/
+      document.querySelector("#cropping-tool").remove();
+      //send message to background script with cropped image
+      chrome.runtime.sendMessage(
+        { callbackMethod: "empty", croppedImage: null },
+        function(response) {
+          //do nothing
+        }
+      );
+    }
   }
 
   //adding event listener for key press event on cropping interface
