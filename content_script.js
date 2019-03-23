@@ -47,7 +47,7 @@ if (!document.querySelector("#cropping-tool")) {
   var image = document.getElementById("image");
   var cropper = new Cropper(image, {
     autoCrop: true,
-    zoomable: true,
+    zoomable: false,
     movable: true,
     rotatable: true,
     cropend: function(e) {}
